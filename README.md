@@ -23,3 +23,6 @@ git add filnamn
 git status = kolla status
 git commit
 -m "" = message
+
+
+ööö
