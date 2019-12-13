@@ -45,7 +45,9 @@ app.get('/:username', function (req, res) {
   res.json(user);
 })
 
-app.listen(port)
+app.listen(port, () => {
+  console.log("listening to: http://localhost:"+port);
+})
 
 process.on("SIGINT", () => {
   console.log(`process received a SIGINT signal`);
