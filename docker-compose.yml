@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  # our node api
+  api:
+    build: .
+    ports:
+      - 3000:3000
+
+  # $ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d  -p 5432:5432 postgres
+  postgres:
+    image: postgres
+    environment:
+      - "POSTGRES_PASSWORD=mysecretpassword"
+    ports:
+      - 5432:5432
