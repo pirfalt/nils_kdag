@@ -19,10 +19,18 @@ node server.js
 Disconneta server= ctrl+c
 
 
-git add filnamn
-git status = kolla status
-git commit
--m "" = message
+git add [filnamn]  // Välj fil att pusha
+git status  // kolla status
+git commit  // Lägg alltid till meddelande, kort och beskrivance
+-m ""     //message
+
+
+git log     // Kolla senaste commits
+git log --graph --all --decorate  // Snygg variant
+
+git show [commit ID]  // visar vad som ändrats
+
+
 
 
 ööö
