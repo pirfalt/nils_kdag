@@ -4,7 +4,8 @@
   "description": "Installera ubuntu på Docker\r docker run -it -v $PWD:/home -w /home ubuntu",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
   },
   "devDependencies": {},
   "scripts": {
