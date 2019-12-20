@@ -69,7 +69,8 @@ app.get("/:id/:field", function(req, res, next) {
 
 const server = app.listen(port, () => {
   const nets = os.networkInterfaces();
-  const publicAddress = nets["en0"].find(n => n.family == "IPv4").address;
+  const net = nets["en0"] || nets["eth0"] || nets["lo0"];
+  const publicAddress = net.find(n => n.family == "IPv4").address;
   console.log(`Listening:`);
   console.log(`  Local:   http://localhost:${port}/`);
   console.log(`  Public:  http://${publicAddress}:${port}/`);
