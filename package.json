@@ -1,0 +1,26 @@
+{
+  "name": "nils_kdag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://76fa53936394ce03d67b31f13cbccb727ead36ce@github.com/pirfalt/nils_kdag.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pirfalt/nils_kdag/issues"
+  },
+  "homepage": "https://github.com/pirfalt/nils_kdag#readme"
+}
