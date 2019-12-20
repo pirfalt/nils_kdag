@@ -20,12 +20,27 @@ let data = {
     lastname: "Khan"
   },
   banana: {
-    color: "yellow"
+    color: "yellow",
+    tasty: true
   }
 };
 
+const homeSite = `
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <code>${JSON.stringify(data)}</code>
+</body>
+</html>
+`;
 app.get("/", function(req, res) {
-  res.send("Hello World");
+  res.send(homeSite);
 });
 
 app.get("/:id", function(req, res) {
@@ -50,7 +65,7 @@ app.get("/:id/:field", function(req, res, next) {
   res.json(field);
 });
 
-app.listen(port);
+const server = app.listen(port);
 
 process.on("SIGINT", () => {
   const close = util
