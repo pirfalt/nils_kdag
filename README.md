@@ -17,19 +17,19 @@ Eftersom vi använder `docker` behöver vi inte installera mer än det på vår 
 Installera ubuntu på Docker
 
 ```
-docker run --rm -it -v $PWD:/home -w /home ubuntu
+docker run --rm -it -v "$(pwd):/home" -w /home ubuntu
 ```
 
 Set up node
 
 ```
-docker run --rm -it -v "\$PWD:/home" -w /home --entrypoint bash node:12
+docker run --rm -it -v "$(pwd):/home" -w /home --entrypoint bash node:12
 ```
 
 Peka port 3000 mot docker
 
 ```
-docker run --rm -it -v "\$PWD:/home" -w /home --entrypoint bash -p 3000:3000 node:12
+docker run --rm -it -v "$(pwd):/home" -w /home --entrypoint bash -p 3000:3000 node:12
 ```
 
 Starta server (skapa server fil), efter att docker har startat med kommandot ovan.
