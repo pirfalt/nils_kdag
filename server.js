@@ -43,9 +43,10 @@ app.get("/", function(req, res) {
   res.send(homeSite);
 });
 
-app.get("/:id", function(req, res) {
+app.get("/:id", function(req, res, next) {
   const entity = data[req.params.id];
   if (entity == null) {
+    next();
     return;
   }
   res.json(entity);
