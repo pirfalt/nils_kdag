@@ -1,4 +1,5 @@
 const util = require("util");
+const os = require("os");
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -66,9 +67,17 @@ app.get("/:id/:field", function(req, res, next) {
   res.json(field);
 });
 
-const server = app.listen(port);
+const server = app.listen(port, () => {
+  const nets = os.networkInterfaces();
+  const publicAddress = nets["en0"].find(n => n.family == "IPv4").address;
+  console.log(`Listening:`);
+  console.log(`  Local:   http://localhost:${port}/`);
+  console.log(`  Public:  http://${publicAddress}:${port}/`);
+});
 
 process.on("SIGINT", () => {
+  console.log(`process received a SIGINT signal`);
+
   const close = util
     .promisify(server.close.bind(server))()
     .then(() => console.log("close"));
