@@ -14,6 +14,8 @@ Komponenter:
 
 Eftersom vi använder `docker` behöver vi inte installera mer än det på vår egen dator. `git`, `node` och övriga komponenter installeras i en docker miljö.
 
+Skapa en mapp för projektet och öppna den i en terminal.
+
 Installera ubuntu på Docker
 
 ```
@@ -32,13 +34,27 @@ Peka port 3000 mot docker
 docker run --rm -it -v "$(pwd):/home" -w /home --entrypoint bash -p 3000:3000 node:12
 ```
 
+Om du inte redan har gjort det så måste du "clona" projektet från github till din projektmapp.
+
+```
+git clone https://github.com/pirfalt/nils_kdag.git .
+```
+
+Installera dependencies (ladda ner och lägg i `node_modules/`).
+
+```
+npm install
+```
+
 Starta server (skapa server fil), efter att docker har startat med kommandot ovan.
 
 ```
 node server.js
 ```
 
-Disconneta server= `ctrl+c`
+Disconneta server `ctrl+c`
+
+## Gör ändringar i projektet
 
 ```
 git add [filnamn] // Välj fil att pusha
